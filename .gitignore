@@ -1,0 +1,5 @@
+ExpressItauApp/node_modules
+ExpressItauApp/.vscode
+ExpressItauApp/package-lock.json
+ExpressItauApp/config/local.js
+docs

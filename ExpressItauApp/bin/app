@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+const app = require("../src/app");
+const Server = require("../src/server");
+
+const runApplication = async () => {
+
+    const server = new Server(app);
+    return await server.start();
+}
+
+runApplication();

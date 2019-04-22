@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="col-md-12">
+	    <div class="page-header">
+	        <h1>Import Tweets <small>Service <a href="/#!/" class="btn btn-xs btn-default">Home</a></small></h1>
+	        <p class="lead">
+				This service will import the application tweets
+	        </p>
+	    </div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<p ng-class="{'label label-success':  typeMessage=='success', 'label label-danger': typeMessage=='danger','label label-warning': typeMessage=='warning' }"
+			ng-show="showMessage">{{ message }}</p>
+
+		<p class="lead">
+			Select a #hashtag bellow:
+		</p>
+				
+		<form novalidate class="form well">
+			<div class="form-group">
+				<label for="hashtags"></label>
+				<select ng-click="hideMessage()" class="form-control" name="hashtags" id="hashtags" ng-model="data.tag"
+					ng-options="option.tag for option in data.tags track by option.tag">
+				</select>
+			</div>
+			<button type="button" class="btn btn-primary" ng-click="search(data.tag)">Search</button>
+			<button type="button" class="btn btn-danger" ng-click="import(data.tag)"
+				ng-show="result.length>0">Import</button>
+		</form>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-12">
+		<div ng-show="result.length>0">
+			<p class="btn btn-xs btn-default">Total: <span class="badge">{{ result.length }}</span></p>
+			<br><br>
+			<pre>
+						{{ result | json }}
+			</pre>
+		</div>
+		<div ng-show="loading">loading....</div>
+	</div>
+</div>

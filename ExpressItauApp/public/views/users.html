@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-md-12">
+	    <div class="page-header">
+	        <h1>Users<small> Service <a href="/#!/" class="btn btn-xs btn-default">Home</a></small></h1>
+	        <p class="lead">
+				This service displays all users who have more followers
+			</p>
+	    </div>
+	</div>
+</div>
+
+<div class="twitter">
+	<p class="lead">List of five last users:</p>
+	<div class="row" ng-repeat="user in data">
+		<div class="col-md-12">
+			<blockquote>
+				Name: {{ user.name }} <br>
+				Total Followers: {{ user.followersCount }} <br>
+				Lang: {{ user.lang }} <br>
+				Location: {{ user.location }} <br>
+				Description: <br>
+				<p>{{ user.description }}</p>
+				Perfil: <a href="https://twitter.com/{{ user.screenName }}" target="blank">Twitter</a>
+			</blockquote>
+		</div>
+	</div>
+</div>
+

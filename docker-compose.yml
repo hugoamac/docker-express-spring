@@ -1,0 +1,33 @@
+version: "3"
+
+volumes:
+  data_mysql:
+services:
+  db:
+    build:
+     context: ./MysqlDatabase/
+     dockerfile: db.dockerfile
+    ports:
+     - "3307:3306"
+    volumes:
+      - "data_mysql:/var/lib/mysql"
+  web:
+    build:
+     context: ./ExpressItauApp/
+     dockerfile: express.dockerfile
+    command: npm start
+    ports:
+     - "8080:8080"
+    volumes:
+      - "./ExpressItauApp:/usr/www"
+      - /usr/www/node_modules
+    links:
+      - db
+  backend:
+    build:
+      context: ./SpringItauApp/
+      dockerfile: spring.dockerfile
+    ports:
+     - "8085:8085"
+    links:
+     - db    

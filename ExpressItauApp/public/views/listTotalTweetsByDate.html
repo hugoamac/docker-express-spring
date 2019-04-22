@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="col-md-12">
+	    <div class="page-header">
+	        <h1>List total of tweets by date<small> Service <a href="/#!/" class="btn btn-xs btn-default">Home</a></small></h1>
+	        <p class="lead">
+	           This service provides a form for searching total of tweets by date
+	        </p>
+	    </div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<p class="lead">Search total of tweets by:</p>
+		<form novalidate class="form well">
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">dd-mm-YYYY</span>
+					<input maxlength="10" type="text" name="date" ng-keyup="mask($event)" ng-model="data.date" class="form-control" aria-describedby="basic-addon1"/>
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary" ng-click="search(data.date)">Search</button>
+			<button type="reset" class="btn btn-danger">Clear</button>
+		</form>
+	</div>
+	<div class="col-md-8">
+		<div ng-show="data.result.length > 0" class="twitter">
+			<p class="lead">Results:</p>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#total</th>
+						<th>horário</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in data.result">
+						<td> {{ item.total }}</td>
+						<td> {{ item.horary }}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</div>

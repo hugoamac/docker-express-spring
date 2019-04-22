@@ -1,0 +1,43 @@
+{
+  "name": "ItauApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ./src/ && mocha --opts ./mocha.opts",
+    "start": "nodemon ./bin/app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bunyan": "^1.8.12",
+    "bunyan-pretty-stream": "^1.0.1",
+    "bunyan-prettystream": "^0.1.3",
+    "express": "^4.16.4",
+    "html-entities": "^1.2.1",
+    "install": "^0.12.2",
+    "moment": "^2.24.0",
+    "mysql": "^2.16.0",
+    "npm": "^6.9.0",
+    "sanitize": "^2.1.0",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "bower": "^1.8.8",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "eslint": "5.16.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "mocha": "^6.1.3",
+    "nodemon": "^1.18.11",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0",
+    "sinon-express-mock": "^2.2.0"
+  }
+}
